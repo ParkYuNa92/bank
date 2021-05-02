@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.green.mapper.UserMapper">
+	<select id="list" resultType="com.green.vo.UserVO">
+		select * from user_tbl
+	</select>
+	<select id="read" resultType="com.green.vo.UserVO">
+		select * from user_tbl where free_id = #{free_id}
+	</select>
+	<update id="update" parameterType="com.green.vo.UserVO">
+		update user_tbl set input_money=#{input_money}, output_money=#{output_money},
+		money_save=#{money_save},loan_able=#{loan_able} where free_id= #{free_id}
+	</update>
+</mapper>
